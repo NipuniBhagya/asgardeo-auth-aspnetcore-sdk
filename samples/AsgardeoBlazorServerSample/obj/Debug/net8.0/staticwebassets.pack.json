@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/wso2/Public/WSO2/Learning/ASP.Net/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/scopedcss/projectbundle/AsgardeoBlazorServerSample.bundle.scp.css",
+      "PackagePath": "staticwebassets/AsgardeoBlazorServerSample.bundle.scp.css"
+    },
+    {
+      "Id": "/Users/wso2/Public/WSO2/Learning/ASP.Net/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/app.css",
+      "PackagePath": "staticwebassets/app.css"
+    },
+    {
+      "Id": "/Users/wso2/Public/WSO2/Learning/ASP.Net/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/wso2/Public/WSO2/Learning/ASP.Net/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/wso2/Public/WSO2/Learning/ASP.Net/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "/Users/wso2/Public/WSO2/Learning/ASP.Net/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/styles/app.css",
+      "PackagePath": "staticwebassets/styles/app.css"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.AsgardeoBlazorServerSample.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.AsgardeoBlazorServerSample.props",
+      "PackagePath": "build\\AsgardeoBlazorServerSample.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.AsgardeoBlazorServerSample.props",
+      "PackagePath": "buildMultiTargeting\\AsgardeoBlazorServerSample.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.AsgardeoBlazorServerSample.props",
+      "PackagePath": "buildTransitive\\AsgardeoBlazorServerSample.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

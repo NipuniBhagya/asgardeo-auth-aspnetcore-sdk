@@ -1,0 +1,12 @@
+
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<button @onclick="SignOut" style="background: #660000; color: white;">Logout</button>
+
+@code {
+    private void SignOut()
+    {
+        NavigationManager.NavigateTo("/account/logout", forceLoad: true);
+    }
+}
