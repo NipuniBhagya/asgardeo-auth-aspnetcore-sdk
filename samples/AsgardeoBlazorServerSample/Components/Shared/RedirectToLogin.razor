@@ -1,8 +1,10 @@
 @inject NavigationManager Navigation
+@inject UserState UserState
 
 @code {
     protected override void OnInitialized()
     {
-        Navigation.NavigateTo("login");
+        Navigation.NavigateTo("/login");
+        UserState.ClearUser();
     }
 }

@@ -1,48 +1,29 @@
 ﻿@inherits LayoutComponentBase
-@using Microsoft.AspNetCore.Components.Authorization
-@inject NavigationManager NavigationManager
 
-@inject AuthenticationStateProvider AuthenticationStateProvider
-
-<CascadingAuthenticationState>
-    <div class="page">
-        <main>
-            <AuthorizeView>
-                <Authorized>
-                    @if (authState.User?.Identity?.IsAuthenticated ?? false)
-                    {
-                        <div class="top-row px-4">
-                            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">Profile</a>
-                            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">ID Token</a>
-                            <LogoutButton/>
-                        </div>
-                    }
-            </Authorized>
-            </AuthorizeView>
-
-            <article class="content px-4">
+<div class="page">
+    <main>
+        <NavMenu />
+        <div style="display: flex;">
+            <aside class="sidebar">
+                <!-- Sidebar content here -->
+                <nav>
+                    <ul>
+                        <li><a href="/">Net Salary Analysis</a></li>
+                        <li><a href="/profile">Payslips</a></li>
+                        <li><a href="/profile">Profile</a></li>
+                        <li><a href="/settings">Settings</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <article class="content">
                 @Body
             </article>
-        </main>
-    </div>
-</CascadingAuthenticationState>
+        </div>
+    </main>
+</div>
 
 <div id="blazor-error-ui">
     An unhandled error has occurred.
     <a href="" class="reload">Reload</a>
     <a class="dismiss">🗙</a>
 </div>
-
-@code {
-    public required AuthenticationState authState;
-
-    protected override async Task OnInitializedAsync()
-    {
-        authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-    }
-
-    private void SignOut()
-    {
-        NavigationManager.NavigateTo("/account/logout", forceLoad: true);
-    }
-}

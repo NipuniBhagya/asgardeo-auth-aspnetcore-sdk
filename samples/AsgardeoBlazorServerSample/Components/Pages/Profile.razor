@@ -1,0 +1,141 @@
+@page "/profile"
+@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Http
+@using System.Net.Http
+@using System.Net.Http.Headers
+@using System.Threading.Tasks
+@using System.IdentityModel.Tokens.Jwt
+
+@inject IHttpContextAccessor HttpContextAccessor
+@inject HttpClient HttpClient
+@inject UserState UserState
+
+@rendermode InteractiveServer
+
+<div class="profile-page">
+    <div class="profile-header">
+        <h1>Profile Information</h1>
+    </div>
+    @if (UserState.CurrentUser != null)
+    {
+        <div class="profile-content">
+            <div class="profile-section">
+                <form>
+                    <div>
+                        <label for="new-password">Employee code</label>
+                        <input type="text" id="new-password" placeholder="Enter new password" value="@UserState.CurrentUser.EmpCode" />
+                    </div>
+                    <div>
+                        <label for="confirm-password">Email</label>
+                        <input type="text" id="confirm-password" placeholder="johndoe@abc.com" value="@UserState.CurrentUser.Email"/>
+                    </div>
+                    <div>
+                        <label for="current-password">First name</label>
+                        <input type="text" id="current-password" placeholder="Enter your first name" value="@UserState.CurrentUser.FirstName" />
+                    </div>
+                    <div>
+                        <label for="current-password">Last name</label>
+                        <input type="text" id="current-password" placeholder="Enter your last name" value="@UserState.CurrentUser.LastName"/>
+                    </div>
+                    <button type="submit">Update</button>
+                </form>
+            </div>
+        </div>
+    } else {
+        <p>Loading user profile...</p>
+    }
+</div>
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetUserDetails();
+    }
+    private async Task GetUserDetails()
+    {
+        // Ensure HttpContext is not null
+        if (HttpContextAccessor.HttpContext == null)
+        {
+            Console.WriteLine("HttpContext is null.");
+            return;
+        }
+
+        // Extract email from the ID token
+        var idToken = await HttpContextAccessor.HttpContext.GetTokenAsync("id_token");
+
+        if (string.IsNullOrEmpty(idToken))
+        {
+            Console.WriteLine("ID token is missing.");
+            return;
+        }
+
+        var email = GetEmailFromToken(idToken);
+
+        if (string.IsNullOrEmpty(email))
+        {
+            Console.WriteLine("Email claim not found in the token.");
+            return;
+        }
+
+        // Assuming user data is in a JSON file or API, get user details by email
+        var user = await FindUserByEmail(email);
+
+        if (user != null)
+        {
+            // Store the user details in the global state
+            UserState.SetCurrentUser(user);
+        }
+        else
+        {
+            Console.WriteLine("User not found.");
+        }
+    }
+
+    private string? GetEmailFromToken(string token)
+    {
+        try
+        {
+            var handler = new JwtSecurityTokenHandler();
+            var jwtToken = handler.ReadJwtToken(token);
+
+            // Extract the email claim
+            return jwtToken.Claims.FirstOrDefault(c => c.Type == "email")?.Value;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error parsing token: {ex.Message}");
+            return null;
+        }
+    }
+
+    private async Task<User?> FindUserByEmail(string email)
+    {
+        try
+        {
+            // Simulate fetching user data from an external source like an API or file
+            var usersJson = @"
+            [
+                { ""EmpCode"": ""E001"", ""FirstName"": ""John"", ""LastName"": ""Doe"", ""Email"": ""john.doe@example.com"", ""Department"": ""Engineering"" },
+                { ""EmpCode"": ""E002"", ""FirstName"": ""Jane"", ""LastName"": ""Smith"", ""Email"": ""jane.smith@example.com"", ""Department"": ""HR"" },
+                { ""EmpCode"": ""E002"", ""FirstName"": ""Nipuni"", ""LastName"": ""Paaris"", ""Email"": ""se01nipuni@gmail.com"", ""Department"": ""Engineering"" }
+            ]";
+
+            var users = System.Text.Json.JsonSerializer.Deserialize<List<User>>(usersJson);
+
+            if (users == null || users.Count == 0)
+            {
+                Console.WriteLine("Failed to deserialize user JSON or the user list is empty.");
+                return null;
+            }
+
+            // Find the user by email
+            return users.FirstOrDefault(u => u.Email.Equals(email, StringComparison.OrdinalIgnoreCase));
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Error fetching users: {e.Message}");
+            return null;
+        }
+    }
+}

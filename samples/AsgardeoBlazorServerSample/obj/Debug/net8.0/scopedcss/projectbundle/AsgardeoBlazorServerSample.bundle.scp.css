@@ -1,16 +1,53 @@
-/* _content/AsgardeoBlazorServerSample/Components/Layout/MainLayout.razor.rz.scp.css */
-.page[b-uok7ybiduj] {
+/* _content/AsgardeoBlazorServerSample/Components/Layout/GuestLayout.razor.rz.scp.css */
+.page[b-qki4v192vp] {
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-main[b-uok7ybiduj] {
+main[b-qki4v192vp] {
     flex: 1;
+    flex-grow: 1;
+}
+
+.guest-content[b-qki4v192vp] {
+    min-height: 95vh;
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center;  
+    background: linear-gradient(to bottom right, #ddc18e, #f6f6f68a), linear-gradient(to bottom right, #fff3de, #f6f6f68a);
+    gap: 70px;
+}
+/* _content/AsgardeoBlazorServerSample/Components/Layout/MainLayout.razor.rz.scp.css */
+.page[b-uok7ybiduj] {
+    /* display: flex;
+    flex-direction: column; */
+    min-height: 100vh;
+}
+
+main[b-uok7ybiduj] {
+    /* display: flex;
+    flex-grow: 1; */
+}
+
+.content[b-uok7ybiduj] {
+    flex-grow: 1;
 }
 
 .sidebar[b-uok7ybiduj] {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    background-color: #ECE9E5;
+    padding: 40px;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+    height: 100%;
+}
+
+.sidebar nav ul[b-uok7ybiduj] {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li[b-uok7ybiduj] {
+    margin-bottom: 20px; /* Space between the list items */
 }
 
 .top-row[b-uok7ybiduj] {
@@ -71,7 +108,7 @@ main[b-uok7ybiduj] {
         width: 0;
     }
 
-    .top-row[b-uok7ybiduj], article[b-uok7ybiduj] {
+    .top-row[b-uok7ybiduj] {
         padding-left: 2rem !important;
         padding-right: 1.5rem !important;
     }
@@ -89,115 +126,321 @@ main[b-uok7ybiduj] {
     z-index: 1000;
 }
 
-    #blazor-error-ui .dismiss[b-uok7ybiduj] {
-        cursor: pointer;
-        position: absolute;
-        right: 0.75rem;
-        top: 0.5rem;
-    }
-/* _content/AsgardeoBlazorServerSample/Components/Layout/NavMenu.razor.rz.scp.css */
-.navbar-toggler[b-9hkeo03kpw] {
-    appearance: none;
+#blazor-error-ui .dismiss[b-uok7ybiduj] {
     cursor: pointer;
-    width: 3.5rem;
-    height: 2.5rem;
-    color: white;
     position: absolute;
+    right: 0.75rem;
     top: 0.5rem;
-    right: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") no-repeat center/1.75rem rgba(255, 255, 255, 0.1);
 }
-
-.navbar-toggler:checked[b-9hkeo03kpw] {
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
+/* _content/AsgardeoBlazorServerSample/Components/Layout/NavMenu.razor.rz.scp.css */
 .top-row[b-9hkeo03kpw] {
+    background-color: #ECE9E5;
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2);
+    justify-content: flex-start;
     height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
 }
 
-.navbar-brand[b-9hkeo03kpw] {
-    font-size: 1.1rem;
+.top-row[b-9hkeo03kpw]  a, .top-row[b-9hkeo03kpw]  .btn-link {
+    white-space: nowrap;
+    margin-left: 1.5rem;
+    text-decoration: none;
 }
 
-.bi[b-9hkeo03kpw] {
-    display: inline-block;
-    position: relative;
-    width: 1.25rem;
-    height: 1.25rem;
-    margin-right: 0.75rem;
-    top: -1px;
-    background-size: cover;
+.top-row[b-9hkeo03kpw]  a:hover, .top-row[b-9hkeo03kpw]  .btn-link:hover {
+    cursor: pointer;
 }
 
-.bi-house-door-fill-nav-menu[b-9hkeo03kpw] {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-house-door-fill' viewBox='0 0 16 16'%3E%3Cpath d='M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z'/%3E%3C/svg%3E");
+.top-row[b-9hkeo03kpw]  a:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.bi-plus-square-fill-nav-menu[b-9hkeo03kpw] {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-plus-square-fill' viewBox='0 0 16 16'%3E%3Cpath d='M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z'/%3E%3C/svg%3E");
-}
-
-.bi-list-nested-nav-menu[b-9hkeo03kpw] {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-list-nested' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z'/%3E%3C/svg%3E");
-}
-
-.nav-item[b-9hkeo03kpw] {
-    font-size: 0.9rem;
-    padding-bottom: 0.5rem;
-}
-
-    .nav-item:first-of-type[b-9hkeo03kpw] {
-        padding-top: 1rem;
+@media (max-width: 640.98px) {
+    .top-row[b-9hkeo03kpw] {
+        justify-content: space-between;
     }
 
-    .nav-item:last-of-type[b-9hkeo03kpw] {
-        padding-bottom: 1rem;
+    .top-row[b-9hkeo03kpw]  a, .top-row[b-9hkeo03kpw]  .btn-link {
+        margin-left: 0;
     }
-
-    .nav-item[b-9hkeo03kpw]  .nav-link {
-        color: #d7d7d7;
-        background: none;
-        border: none;
-        border-radius: 4px;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        line-height: 3rem;
-        width: 100%;
-    }
-
-.nav-item[b-9hkeo03kpw]  a.active {
-    background-color: rgba(255,255,255,0.37);
-    color: white;
-}
-
-.nav-item[b-9hkeo03kpw]  .nav-link:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
-}
-
-.nav-scrollable[b-9hkeo03kpw] {
-    display: none;
-}
-
-.navbar-toggler:checked ~ .nav-scrollable[b-9hkeo03kpw] {
-    display: block;
 }
 
 @media (min-width: 641px) {
-    .navbar-toggler[b-9hkeo03kpw] {
-        display: none;
+    .top-row[b-9hkeo03kpw] {
+        position: sticky;
+        top: 0;
+        z-index: 1;
     }
 
-    .nav-scrollable[b-9hkeo03kpw] {
-        /* Never collapse the sidebar for wide screens */
-        display: block;
-
-        /* Allow sidebar to scroll for tall menus */
-        height: calc(100vh - 3.5rem);
-        overflow-y: auto;
+    .top-row.auth[b-9hkeo03kpw]  a:first-child {
+        flex: 1;
+        text-align: right;
+        width: 0;
     }
+
+    .top-row[b-9hkeo03kpw] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+
+.right-panel[b-9hkeo03kpw] {
+    width: 50%;
+    padding: 10px;
+    text-align: right;
+    margin-left: 10px;
+    float: left;
+    display: flex;
+    justify-content: right; /* Centers the columns horizontally */
+    align-items: center;
+}
+
+.left-panel[b-9hkeo03kpw] {
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+}
+
+.center-panel[b-9hkeo03kpw] {
+    width: 40%;
+    padding: 15px;
+    text-align: left;
+    display: flex;
+    justify-content: left; /* Centers the columns horizontally */
+    align-items: center;
+}
+
+.center-panel a[b-9hkeo03kpw] {
+    width: 70px;
+}
+/* _content/AsgardeoBlazorServerSample/Components/Pages/Home.razor.rz.scp.css */
+.profile-container[b-ao19n9td3r] {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 85px;
+}
+
+h1[b-ao19n9td3r] {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h2[b-ao19n9td3r] {
+    font-size: 1.25rem !important;
+}
+
+.profile-container > h2[b-ao19n9td3r] {
+    font-size: 1.25rem !important;
+}
+
+p[b-ao19n9td3r] {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.profile-cards[b-ao19n9td3r] {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.card[b-ao19n9td3r] {
+    border: solid 1px #dedede;
+    /* background: #37323219; */
+    background: linear-gradient(135deg, #f7f3e9, #fafafa);
+    border-radius: 10px;
+    padding: 35px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 500px;
+}
+
+.card:hover[b-ao19n9td3r] {
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header[b-ao19n9td3r] {
+    margin-bottom: 10px;
+    text-align: left;
+    display: flex;
+}
+
+.card-image[b-ao19n9td3r] {
+    margin-right: 12px;
+    height: 25px;
+}
+
+.card-header h2[b-ao19n9td3r] {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.card-body[b-ao19n9td3r] {
+    font-size: 1rem;
+    text-align: left;
+}
+
+.progress-bar[b-ao19n9td3r] {
+    background-color: #f1f1f1;
+    height: 8px;
+    border-radius: 4px;
+    margin: 20px 0;
+    position: relative;
+    width: 100%;
+}
+
+.progress[b-ao19n9td3r] {
+    background-color: #f39c12; /* Customize as needed */
+    height: 100%;
+    border-radius: 4px;
+}
+
+.profile-link[b-ao19n9td3r] {
+    display: block;
+    color: #9b0909;
+    text-decoration: none;
+    font-weight: 400;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.profile-link:hover[b-ao19n9td3r] {
+    color: rgb(187, 44, 44);
+}
+
+.security-card[b-ao19n9td3r] {
+    background-image: url('/path-to-security-icon.svg'); /* Add your icon */
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 80px;
+}
+
+.profile-card[b-ao19n9td3r] {
+    background-image: url('/path-to-profile-icon.svg'); /* Add your icon */
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 80px;
+}
+/* _content/AsgardeoBlazorServerSample/Components/Pages/Profile.razor.rz.scp.css */
+/* Profile page layout */
+.profile-page[b-2nzf5we0r7] {
+    padding: 40px;
+    background-color: #ffffff; /* White background to match the content area */
+    color: #333; /* Text color */
+    border-radius: 8px;
+    margin: 20px;
+    width: 25%;
+}
+
+/* Profile header */
+.profile-header h1[b-2nzf5we0r7] {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #5d4037; /* Brown text color for headings */
+}
+
+/* Profile content sections */
+.profile-section[b-2nzf5we0r7] {
+    margin-bottom: 40px;
+}
+
+.profile-section h2[b-2nzf5we0r7] {
+    font-size: 22px;
+    color: #5d4037; /* Brown text color for subheadings */
+    margin-bottom: 15px;
+}
+
+/* Form styles */
+.profile-section form[b-2nzf5we0r7] {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile-section form input[b-2nzf5we0r7] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 16px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.profile-section form button[b-2nzf5we0r7] {
+    padding: 10px 15px;
+    background-color: #a52a2a; /* Button background color matching the screenshot */
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.profile-section form button:hover[b-2nzf5we0r7] {
+    background-color: #8b0000; /* Darker color on hover */
+}
+/* _content/AsgardeoBlazorServerSample/Components/Pages/Settings.razor.rz.scp.css */
+/* Profile page layout */
+.profile-page[b-i5849e781d] {
+    padding: 40px;
+    background-color: #ffffff; /* White background to match the content area */
+    color: #333; /* Text color */
+    border-radius: 8px;
+    margin: 20px;
+    width: 25%;
+}
+
+/* Profile header */
+.profile-header h1[b-i5849e781d] {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #5d4037; /* Brown text color for headings */
+}
+
+/* Profile content sections */
+.profile-section[b-i5849e781d] {
+    margin-bottom: 40px;
+}
+
+.profile-section h2[b-i5849e781d] {
+    font-size: 22px;
+    color: #5d4037; /* Brown text color for subheadings */
+    margin-bottom: 15px;
+}
+
+/* Form styles */
+.profile-section form[b-i5849e781d] {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile-section form input[type="password"][b-i5849e781d] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.profile-section form button[b-i5849e781d] {
+    padding: 10px 15px;
+    background-color: #a52a2a; /* Button background color matching the screenshot */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.profile-section form button:hover[b-i5849e781d] {
+    background-color: #8b0000; /* Darker color on hover */
 }

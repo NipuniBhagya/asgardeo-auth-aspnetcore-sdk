@@ -1,7 +1,91 @@
-﻿@page "/"
+﻿@page "/home"
+@using AsgardeoBlazorServerSample.Components.Pages
+@using AsgardeoBlazorServerSample.Components.Shared
+@inject UserState UserState
 
-<PageTitle>Home</PageTitle>
+<div class="profile-container">
+    <h1>Welcome, @UserState.CurrentUser?.Email</h1>
+    <p>Manage your personal information, payslips, and privacy settings.</p>
 
-<h1 class="text-3xl font-bold underline">Hello, world!</h1>
+    <div class="profile-cards">
+        <!-- Profile Card -->
+        <div class="card security-card">
+            <div class="card-header">
+                <img class="card-image" src="Assets/Icons/profile.svg" alt="Salary Analysis"/>
+                <h2>Profile</h2>
+            </div>
+            <div class="card-body">
+                <p>Settings and recommendations to help you keep your account secure</p>
+                <a class="profile-link" href="/security/manage">Update profile</a>
+            </div>
+        </div>
 
-Welcome to your new app.
+        <!-- Account Security Card -->
+        <div class="card security-card">
+            <div class="card-header">
+                <img class="card-image" src="Assets/Icons/password.svg" alt="Salary Analysis"/>
+                <h2>Change password</h2>
+            </div>
+            <div class="card-body">
+                <p>Settings and recommendations to help you keep your account secure</p>
+                <a class="profile-link" href="/security/manage">Update password</a>
+            </div>
+        </div>
+
+         <!-- Account Security Card -->
+        <div class="card security-card">
+            <div class="card-header">
+                <img class="card-image" src="Assets/Icons/payslips.svg" alt="Salary Analysis"/>
+                <h2>Payslips</h2>
+            </div>
+            <div class="card-body">
+                <p>Settings and recommendations to help you keep your account secure</p>
+                <a class="profile-link" href="/security/manage">View payslips</a>
+            </div>
+        </div>
+    </div>
+    <div class="profile-cards">
+        <!-- Profile Card -->
+        <div class="card security-card">
+            <div class="card-header">
+                <img class="card-image" src="Assets/Icons/analysis.svg" alt="Salary Analysis"/>
+                <h2>Salary analysis</h2>
+            </div>
+            <div class="card-body">
+                <p>Settings and recommendations to help you keep your account secure</p>
+                <a class="profile-link" href="/security/manage">Update profile</a>
+            </div>
+        </div>
+
+        <!-- Account Security Card -->
+        <div class="card security-card">
+            <div class="card-header">
+                <img class="card-image" src="Assets/Icons/settings.svg" alt="Salary Analysis"/>
+                <h2>Settings</h2>
+            </div>
+            <div class="card-body">
+                <p>Settings and recommendations to help you keep your account secure</p>
+                <a class="profile-link" href="/security/manage">Update password</a>
+            </div>
+        </div>
+
+         <!-- Account Security Card -->
+        <div class="card security-card">
+            <div class="card-header">
+                <img class="card-image" src="Assets/Icons/logins.svg" alt="Salary Analysis"/>
+                <h2>Login history</h2>
+            </div>
+            <div class="card-body">
+                <p>Settings and recommendations to help you keep your account secure</p>
+                <a class="profile-link" href="/security/manage">View payslips</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        Console.WriteLine("Profile" + UserState.CurrentUser);
+    }
+}

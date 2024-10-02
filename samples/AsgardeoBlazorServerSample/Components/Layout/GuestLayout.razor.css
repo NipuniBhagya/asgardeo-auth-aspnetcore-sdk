@@ -1,0 +1,19 @@
+.page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    flex-grow: 1;
+}
+
+.guest-content {
+    min-height: 95vh;
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center;  
+    background: linear-gradient(to bottom right, #ddc18e, #f6f6f68a), linear-gradient(to bottom right, #fff3de, #f6f6f68a);
+    gap: 70px;
+}

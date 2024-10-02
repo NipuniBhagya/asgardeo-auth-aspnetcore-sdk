@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@inject NavigationManager Navigation
+
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,8 +16,51 @@
 </head>
 
 <body>
-    <Routes />
+    <Router AppAssembly="@typeof(App).Assembly">
+        <Found Context="routeData">
+            <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+            <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+        </Found>
+        <NotFound>
+            <PageTitle>Not found</PageTitle>
+            <LayoutView Layout="@typeof(MainLayout)">
+                <p role="alert">Sorry, there's nothing at this address.</p>
+            </LayoutView>
+        </NotFound>
+    </Router>
     <script src="_framework/blazor.web.js"></script>
 </body>
 
 </html>
+
+@code {
+    private AuthenticationState? authState;
+
+    [Inject]
+    private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
+
+    [Inject]
+    private UserState UserState { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Fetch the authentication state (identity and claims)
+        authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+
+        if (authState.User.Identity != null && authState.User.Identity.IsAuthenticated)
+        {
+            // Extract user information from claims (e.g., email, first name, last name)
+            var email = authState.User.FindFirst(c => c.Type == "email")?.Value;
+            var firstName = authState.User.FindFirst(c => c.Type == "given_name")?.Value;
+            var lastName = authState.User.FindFirst(c => c.Type == "family_name")?.Value;
+
+            // Set the current user details in the global UserState
+            UserState.SetCurrentUser(new User
+            {
+                Email = email,
+                FirstName = firstName,
+                LastName = lastName
+            });
+        }
+    }
+}

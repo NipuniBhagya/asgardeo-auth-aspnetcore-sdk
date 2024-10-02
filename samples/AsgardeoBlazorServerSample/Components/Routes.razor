@@ -3,18 +3,27 @@
 @using Microsoft.AspNetCore.Components.Routing
 @using Microsoft.AspNetCore.Components.Web
 
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
 <CascadingAuthenticationState>
     <Router AppAssembly="@typeof(App).Assembly">
         <Found Context="routeData">
-            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
-                <Authorizing>
-                    <p>Determining session state, please wait...</p>
-                </Authorizing>
-                <NotAuthorized>
-                    <RedirectToLogin/>
-                </NotAuthorized>
-            </AuthorizeRouteView>
-            <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+            @if (authState?.User.Identity != null && authState.User.Identity.IsAuthenticated)
+            {
+                <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+                    <Authorizing>
+                        <p>Determining session state, please wait...</p>
+                        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+                    </Authorizing>
+                    <NotAuthorized>
+                        <RedirectToLogin/>
+                    </NotAuthorized>
+                </AuthorizeRouteView>
+            }
+            else
+            {
+                <RedirectToLogin />
+            }
         </Found>
         <NotFound>
             <PageTitle>Not found</PageTitle>
@@ -24,3 +33,14 @@
         </NotFound>
     </Router>
 </CascadingAuthenticationState>
+
+@code {
+    private AuthenticationState? authState;
+
+    protected override async Task OnInitializedAsync()
+    {
+        authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+
+        StateHasChanged(); 
+    }
+}

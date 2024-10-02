@@ -1,0 +1,29 @@
+@page "/settings"
+@rendermode InteractiveServer
+
+<div class="profile-page">
+    <div class="profile-header">
+        <h1>Account Settings</h1>
+    </div>
+
+    <div class="profile-content">
+        <div class="profile-section">
+            <h2>Change Password</h2>
+            <form>
+                <div>
+                    <label for="current-password">Current Password</label>
+                    <input type="password" id="current-password" placeholder="Enter current password" />
+                </div>
+                <div>
+                    <label for="new-password">New Password</label>
+                    <input type="password" id="new-password" placeholder="Enter new password" />
+                </div>
+                <div>
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" placeholder="Confirm new password" />
+                </div>
+                <button type="submit">Update Password</button>
+            </form>
+        </div>
+    </div>
+</div>

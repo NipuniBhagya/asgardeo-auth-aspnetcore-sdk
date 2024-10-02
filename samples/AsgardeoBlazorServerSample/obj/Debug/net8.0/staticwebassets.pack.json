@@ -1,27 +1,71 @@
 {
   "Files": [
     {
-      "Id": "/Users/wso2/Public/WSO2/Learning/ASP.Net/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/scopedcss/projectbundle/AsgardeoBlazorServerSample.bundle.scp.css",
+      "Id": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/scopedcss/projectbundle/AsgardeoBlazorServerSample.bundle.scp.css",
       "PackagePath": "staticwebassets/AsgardeoBlazorServerSample.bundle.scp.css"
     },
     {
-      "Id": "/Users/wso2/Public/WSO2/Learning/ASP.Net/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/app.css",
+      "Id": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/Assets/Icons/analysis.svg",
+      "PackagePath": "staticwebassets/Assets/Icons/analysis.svg"
+    },
+    {
+      "Id": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/Assets/Icons/logins.svg",
+      "PackagePath": "staticwebassets/Assets/Icons/logins.svg"
+    },
+    {
+      "Id": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/Assets/Icons/password.svg",
+      "PackagePath": "staticwebassets/Assets/Icons/password.svg"
+    },
+    {
+      "Id": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/Assets/Icons/payslips.svg",
+      "PackagePath": "staticwebassets/Assets/Icons/payslips.svg"
+    },
+    {
+      "Id": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/Assets/Icons/profile.svg",
+      "PackagePath": "staticwebassets/Assets/Icons/profile.svg"
+    },
+    {
+      "Id": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/Assets/Icons/settings.svg",
+      "PackagePath": "staticwebassets/Assets/Icons/settings.svg"
+    },
+    {
+      "Id": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/Assets/landing-bg.svg",
+      "PackagePath": "staticwebassets/Assets/landing-bg.svg"
+    },
+    {
+      "Id": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/Assets/msl-logo-sm.png",
+      "PackagePath": "staticwebassets/Assets/msl-logo-sm.png"
+    },
+    {
+      "Id": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/Assets/msl-logo.png",
+      "PackagePath": "staticwebassets/Assets/msl-logo.png"
+    },
+    {
+      "Id": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/Assets/user-logo.png",
+      "PackagePath": "staticwebassets/Assets/user-logo.png"
+    },
+    {
+      "Id": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/Assets/user.png",
+      "PackagePath": "staticwebassets/Assets/user.png"
+    },
+    {
+      "Id": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/app.css",
       "PackagePath": "staticwebassets/app.css"
     },
     {
-      "Id": "/Users/wso2/Public/WSO2/Learning/ASP.Net/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/bootstrap/bootstrap.min.css",
+      "Id": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/bootstrap/bootstrap.min.css",
       "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
     },
     {
-      "Id": "/Users/wso2/Public/WSO2/Learning/ASP.Net/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/bootstrap/bootstrap.min.css.map",
+      "Id": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/bootstrap/bootstrap.min.css.map",
       "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
     },
     {
-      "Id": "/Users/wso2/Public/WSO2/Learning/ASP.Net/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/favicon.png",
+      "Id": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/favicon.png",
       "PackagePath": "staticwebassets/favicon.png"
     },
     {
-      "Id": "/Users/wso2/Public/WSO2/Learning/ASP.Net/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/styles/app.css",
+      "Id": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/wwwroot/styles/app.css",
       "PackagePath": "staticwebassets/styles/app.css"
     },
     {

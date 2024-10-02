@@ -1,12 +1,13 @@
 
-@inject NavigationManager NavigationManager
+@using Asgardeo.AspNetCore.Authenthentication.Services
+@inject IAuthService AuthService
 @rendermode InteractiveServer
 
-<button @onclick="SignOut" style="background: #660000; color: white;">Logout</button>
+<button @onclick="SignOut" style="color: black; padding: 0.5rem 0.75rem; border-radius: 0.375rem; border: solid 1px #660000" class="btn-link">Logout</button>
 
 @code {
-    private void SignOut()
+    private async Task SignOut()
     {
-        NavigationManager.NavigateTo("/account/logout", forceLoad: true);
+        await AuthService.Logout();
     }
 }

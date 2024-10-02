@@ -1,15 +1,81 @@
-﻿<div class="nav-item px-3">
-    <NavLink class="nav-link" href="payslip">
-        <span class="oi oi-document" aria-hidden="true"></span> Payslip
-    </NavLink>
+﻿@using System.IdentityModel.Tokens.Jwt
+@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Components.Authorization
+@using System.Security.Claims
+@inject IHttpContextAccessor HttpContextAccessor
+
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<div class="top-row px-4">
+    <div class="left-panel">
+        <img src="Assets/msl-logo-sm.png" alt="MSL Logo" style="height: 32px !important;">
+        <h1 class="ml-2" style="font-size: 20px;">Payslip Portal</h1>
+    </div>
+    <div class="center-panel"></div>
+    <div class="right-panel">
+        <img src="Assets/user.png" alt="User Logo" style="height: 32px !important;">
+        <p class="ml-2">@displayName</p>
+        <LogoutButton/>
+    </div>
 </div>
-<div class="nav-item px-3">
-    <NavLink class="nav-link" href="userprofile">
-        <span class="oi oi-person" aria-hidden="true"></span> User Profile
-    </NavLink>
-</div>
-<div class="nav-item px-3">
-    <NavLink class="nav-link" href="idtoken">
-        <span class="oi oi-key" aria-hidden="true"></span> ID Token
-    </NavLink>
-</div>
+
+@code {
+    private string idToken;
+    private List<Claim> claims = new List<Claim>();
+    private string displayName;
+
+    protected override async Task OnInitializedAsync()
+    {
+        idToken = await HttpContextAccessor.HttpContext.GetTokenAsync("id_token");
+
+        if (!string.IsNullOrEmpty(idToken))
+        {
+            // Decode the token and extract claims
+            var handler = new JwtSecurityTokenHandler();
+            var jwtToken = handler.ReadJwtToken(idToken);
+
+            if (jwtToken != null)
+            {
+                claims = jwtToken.Claims.ToList();
+                ResolveDisplayName(claims);  // Resolve display name based on claims
+            }
+        }
+        else
+        {
+            idToken = null; // Reset if no token is found
+            displayName = null; // Reset display name
+        }
+
+        StateHasChanged(); // Trigger UI update
+
+    }
+
+    private void ResolveDisplayName(IEnumerable<Claim> claims)
+    {
+        // Get first name, last name, and other user details from claims
+        var firstName = claims.FirstOrDefault(c => c.Type == ClaimTypes.GivenName)?.Value;
+        var lastName = claims.FirstOrDefault(c => c.Type == ClaimTypes.Surname)?.Value;
+        var userName = claims.FirstOrDefault(c => c.Type == "username")?.Value;
+        var email = claims.FirstOrDefault(c => c.Type == "email")?.Value;
+
+        // Display full name if both first and last names are available
+        if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName))
+        {
+            displayName = $"{firstName} {lastName}";
+        }
+        // Fallback to username if available
+        else if (!string.IsNullOrEmpty(userName))
+        {
+            displayName = userName;
+        }
+        // Fallback to email if username is not available
+        else if (!string.IsNullOrEmpty(email))
+        {
+            displayName = email;
+        }
+        else
+        {
+            displayName = "Unknown User";  // Fallback if nothing is available
+        }
+    }
+}

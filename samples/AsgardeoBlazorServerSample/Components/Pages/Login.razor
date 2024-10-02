@@ -1,17 +1,20 @@
 @page "/login"
-@inject NavigationManager NavigationManager
-@inject IConfiguration Configuration
+@page "/"
 @using AsgardeoBlazorServerSample.Components.Shared
+@layout GuestLayout
 
-<div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-md w-full space-y-8">
+<div class="flex items-center justify-center" style="gap: 70px;">
+    <div class="max-w-lg w-30 space-y-8">
+        <img src="Assets/landing-bg.svg" alt="landing background" style="margin: 10px;">
+    </div>
+    <div class="max-w-md w-70 space-y-8">
         <div>
-            @* <img src="Assets/msl-logo.png" alt="MSL Logo" class="mx-auto h-12 w-auto"> *@
-            <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            <img src="Assets/msl-logo.png" alt="MSL Logo" class="mx-auto h-12 w-auto">
+            @* <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
                 Sign in to your account
-            </h2>
+            </h2> *@
         </div>
-        <div style="border: #e9e9e9 solid 1px; padding: 42px 68px; border-radius: 10px;"class="border-solidborder-solid border-2 border-sky-500 ...">
+        <div style="border: #fafafa solid 1px; padding: 42px 68px; border-radius: 10px; width: 450px;"class="border-solid border-2 border-sky-500 ...">
             <form class="space-y-6" action="#" method="POST">
                 <input type="hidden" name="remember" value="true">
                 <div class="space-y-4">
@@ -59,7 +62,7 @@
                         <div class="w-full border-t border-gray-300"></div>
                     </div>
                     <div class="relative flex justify-center text-sm">
-                        <span class="px-2 bg-gray-50 text-gray-500">
+                        <span class="px-2 text-gray-500" style="background: linear-gradient(to right, #f1e8d7, #f2eadc);">
                             Or continue with
                         </span>
                     </div>
@@ -75,11 +78,3 @@
     </div>
 </div>
 
-<div class="mt-8 text-center">
-    <p class="text-sm text-gray-600">
-        Not a member?
-        <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">
-            Start a 14 day free trial
-        </a>
-    </p>
-</div>

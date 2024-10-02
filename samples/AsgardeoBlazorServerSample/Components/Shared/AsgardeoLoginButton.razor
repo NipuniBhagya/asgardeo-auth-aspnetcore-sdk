@@ -1,4 +1,5 @@
-@inject NavigationManager NavigationManager
+@using Asgardeo.AspNetCore.Authenthentication.Services
+@inject IAuthService AuthService
 @rendermode InteractiveServer
 
 <button 
@@ -9,8 +10,8 @@
 </button>
 
 @code {
-    private void SignIn()
+    private async Task SignIn()
     {
-        NavigationManager.NavigateTo("/account/login", forceLoad: true);
+        await AuthService.Login();
     }
 }
