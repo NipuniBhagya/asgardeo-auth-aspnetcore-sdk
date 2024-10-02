@@ -15,6 +15,8 @@ namespace Asgardeo.AspNetCore.Authenthentication.Configuration
     {
         public static IServiceCollection AddCustomAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
+            var asgardeoSettings = configuration.GetSection("Authentication:Asgardeo").Get<AsgardeoSettings>();
+
             services.AddAuthentication(options =>
             {
                 options.DefaultScheme = "Cookies";
@@ -23,13 +25,18 @@ namespace Asgardeo.AspNetCore.Authenthentication.Configuration
             .AddCookie("Cookies")
             .AddOpenIdConnect(OpenIdConnectDefaults.AuthenticationScheme, options =>
             {
-                options.Authority = "https://api.asgardeo.io/t/nipunib/oauth2/token";
-                options.ClientId = "wdufxgtTvyRsbiZ2QLFClxzkmhMa";
-                options.ClientSecret = "ocf9KMh3qfQAVKF0FswKQem43vcmFTCVRLUs74H7u1Qa";
-                options.ResponseType = "code";
-                options.Scope.Add("openid");
-                options.Scope.Add("profile");
-                options.SaveTokens = true;
+                // Use values from the configuration model
+                options.Authority = asgardeoSettings.Authority;
+                options.ClientId = asgardeoSettings.ClientId;
+                options.ClientSecret = asgardeoSettings.ClientSecret;
+                options.ResponseType = asgardeoSettings.ResponseType;
+                options.SaveTokens = asgardeoSettings.SaveTokens;
+
+                // Add scopes
+                foreach (var scope in asgardeoSettings.Scopes)
+                {
+                    options.Scope.Add(scope);
+                }
                 options.CallbackPath = "/signin-oidc";
                 options.SignedOutCallbackPath = "/signout-callback-oidc";
                 options.TokenValidationParameters.NameClaimType = "name";

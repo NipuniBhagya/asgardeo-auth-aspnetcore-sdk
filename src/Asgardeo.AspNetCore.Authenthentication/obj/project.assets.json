@@ -1710,11 +1710,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/wso2/Public/WSO2/Learning/ASP.Net/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/Asgardeo.AspNetCore.Authenthentication.csproj",
+      "projectUniqueName": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/Asgardeo.AspNetCore.Authenthentication.csproj",
       "projectName": "Asgardeo.AspNetCore.Authenthentication",
-      "projectPath": "/Users/wso2/Public/WSO2/Learning/ASP.Net/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/Asgardeo.AspNetCore.Authenthentication.csproj",
+      "projectPath": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/Asgardeo.AspNetCore.Authenthentication.csproj",
       "packagesPath": "/Users/wso2/.nuget/packages/",
-      "outputPath": "/Users/wso2/Public/WSO2/Learning/ASP.Net/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/obj/",
+      "outputPath": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/wso2/.nuget/NuGet/NuGet.Config"

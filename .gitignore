@@ -1,0 +1,101 @@
+## Ignore Visual Studio temporary files, build results, and
+## user-specific files for Blazor projects
+
+# User-specific files
+.vscode/
+.vscode/*
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (Mono auto generated)
+mono_crash.*
+
+# Auto-generated files
+Generated_Code/
+
+# Mac/Linux generated files
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+*.swp
+*~
+
+# Build folders
+bin/
+obj/
+
+# ASP.NET Scaffolding folders
+Scaffolding/
+
+# The SDK-style .NET projects (including Blazor projects) uses this directory
+# to store NuGet package cache.
+.nuget/
+
+# Log files
+*.log
+
+# Crash reports
+crashlytics/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Blazor WebAssembly-specific files
+wwwroot/css/app.css
+wwwroot/css/app.css.map
+wwwroot/service-worker.js
+wwwroot/service-worker.published.js
+wwwroot/_framework/
+wwwroot/_content/
+wwwroot/*.gz
+
+# Visual Studio directories
+.vs/
+.idea/
+
+# Rider files
+.idea/
+.idea/*
+
+# Local History for JetBrains IDEs (if using Rider or WebStorm)
+.idea/.history
+
+# Rider log
+.idea/.idea.log
+
+# Rider config folder (local IDE settings)
+.idea/.config/
+
+# Backup files
+*.bak
+
+# ASP.NET specific files
+appsettings.Development.json
+appsettings.Local.json
+appsettings.Production.json
+appsettings.Staging.json
+
+# JetBrains Rider specific files
+.idea/
+.idea/*
+
+# SQLite database files
+*.db
+*.db-shm
+*.db-wal
+
+# NPM dependencies (Blazor WebAssembly with JavaScript interop)
+node_modules/
+
+# Exclude NuGet packages
+*.nupkg

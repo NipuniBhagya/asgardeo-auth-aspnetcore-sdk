@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Components;
@@ -18,13 +19,12 @@ namespace Asgardeo.AspNetCore.Authenthentication.Services
 
         public async Task Login()
         {
-            _navigationManager.NavigateTo("authentication/login");
+            _navigationManager.NavigateTo("account/login", forceLoad: true);
         }
 
         public async Task Logout()
         {
-            await _httpContextAccessor.HttpContext.SignOutAsync(OpenIdConnectDefaults.AuthenticationScheme);
-            _navigationManager.NavigateTo("authentication/logout");
+            _navigationManager.NavigateTo("account/logout", forceLoad: true);
         }
 
         public async Task<string> GetAccessToken()

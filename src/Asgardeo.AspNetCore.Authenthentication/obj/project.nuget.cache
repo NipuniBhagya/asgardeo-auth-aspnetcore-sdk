@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ifL7koR66gc=",
+  "dgSpecHash": "+4ANY/aPQo0=",
   "success": true,
-  "projectFilePath": "/Users/wso2/Public/WSO2/Learning/ASP.Net/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/Asgardeo.AspNetCore.Authenthentication.csproj",
+  "projectFilePath": "/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/Asgardeo.AspNetCore.Authenthentication.csproj",
   "expectedPackageFiles": [
     "/Users/wso2/.nuget/packages/microsoft.aspnetcore.authentication/2.2.0/microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "/Users/wso2/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

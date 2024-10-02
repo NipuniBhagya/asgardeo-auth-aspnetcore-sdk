@@ -10,3 +10,16 @@
 /Users/wso2/Public/WSO2/Learning/ASP.Net/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/obj/Debug/net8.0/refint/Asgardeo.AspNetCore.Authenthentication.dll
 /Users/wso2/Public/WSO2/Learning/ASP.Net/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/obj/Debug/net8.0/Asgardeo.AspNetCore.Authenthentication.pdb
 /Users/wso2/Public/WSO2/Learning/ASP.Net/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/obj/Debug/net8.0/ref/Asgardeo.AspNetCore.Authenthentication.dll
+/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/bin/Debug/net8.0/Asgardeo.AspNetCore.Authenthentication.deps.json
+/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/bin/Debug/net8.0/Asgardeo.AspNetCore.Authenthentication.dll
+/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/bin/Debug/net8.0/Asgardeo.AspNetCore.Authenthentication.pdb
+/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/obj/Debug/net8.0/Asgardeo.AspNetCore.Authenthentication.csproj.AssemblyReference.cache
+/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/obj/Debug/net8.0/Asgardeo.AspNetCore.Authenthentication.GeneratedMSBuildEditorConfig.editorconfig
+/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/obj/Debug/net8.0/Asgardeo.AspNetCore.Authenthentication.AssemblyInfoInputs.cache
+/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/obj/Debug/net8.0/Asgardeo.AspNetCore.Authenthentication.AssemblyInfo.cs
+/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/obj/Debug/net8.0/Asgardeo.AspNetCore.Authenthentication.csproj.CoreCompileInputs.cache
+/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/obj/Debug/net8.0/Asgardeo.AspNetCore.Authenthentication.sourcelink.json
+/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/obj/Debug/net8.0/Asgardeo.AspNetCore.Authenthentication.dll
+/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/obj/Debug/net8.0/refint/Asgardeo.AspNetCore.Authenthentication.dll
+/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/obj/Debug/net8.0/Asgardeo.AspNetCore.Authenthentication.pdb
+/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/src/Asgardeo.AspNetCore.Authenthentication/obj/Debug/net8.0/ref/Asgardeo.AspNetCore.Authenthentication.dll
