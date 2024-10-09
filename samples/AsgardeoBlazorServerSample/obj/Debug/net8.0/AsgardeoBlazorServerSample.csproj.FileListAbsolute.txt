@@ -99,6 +99,7 @@
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/bin/Debug/net8.0/AsgardeoBlazorServerSample.dll
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/bin/Debug/net8.0/AsgardeoBlazorServerSample.pdb
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
@@ -125,8 +126,12 @@
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.AsgardeoBlazorServerSample.props
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.AsgardeoBlazorServerSample.props
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/staticwebassets.pack.json
+/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/scopedcss/Components/Layout/GuestLayout.razor.rz.scp.css
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/scopedcss/Components/Layout/MainLayout.razor.rz.scp.css
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/scopedcss/Components/Layout/NavMenu.razor.rz.scp.css
+/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/scopedcss/Pages/Home.razor.rz.scp.css
+/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/scopedcss/Pages/Profile.razor.rz.scp.css
+/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/scopedcss/Pages/Settings.razor.rz.scp.css
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/scopedcss/bundle/AsgardeoBlazorServerSample.styles.css
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/scopedcss/projectbundle/AsgardeoBlazorServerSample.bundle.scp.css
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/Asgardeo.47D4CB37.Up2Date
@@ -135,7 +140,3 @@
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/AsgardeoBlazorServerSample.pdb
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/AsgardeoBlazorServerSample.genruntimeconfig.cache
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/ref/AsgardeoBlazorServerSample.dll
-/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/scopedcss/Components/Layout/GuestLayout.razor.rz.scp.css
-/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/scopedcss/Components/Pages/Profile.razor.rz.scp.css
-/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/scopedcss/Components/Pages/Settings.razor.rz.scp.css
-/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/scopedcss/Components/Pages/Home.razor.rz.scp.css

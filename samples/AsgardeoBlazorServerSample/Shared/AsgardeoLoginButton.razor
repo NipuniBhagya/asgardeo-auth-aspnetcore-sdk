@@ -1,6 +1,5 @@
-@using Asgardeo.AspNetCore.Authenthentication.Services
-@inject IAuthService AuthService
-@rendermode InteractiveServer
+@using Asgardeo.AspNetCore.Authenthentication
+@inject AsgardeoAuthService AuthService
 
 <button 
     @onclick="SignIn" 
@@ -12,6 +11,6 @@
 @code {
     private async Task SignIn()
     {
-        await AuthService.Login();
+        await AuthService.SignInAsync();
     }
 }
