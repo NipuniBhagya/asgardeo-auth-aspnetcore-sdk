@@ -2,39 +2,79 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Options;
+using System.Security.Claims;
+using Asgardeo.AspNetCore.Authenthentication.Configuration;
 
-namespace Asgardeo.AspNetCore.Authenthentication.Services
+public class AsgardeoAuthService
 {
-    public class AsgardeoAuthService : IAuthService
+    private readonly IHttpContextAccessor _httpContextAccessor;
+    private readonly AsgardeoOptions _options;
+
+    public AsgardeoAuthService(IHttpContextAccessor httpContextAccessor, IOptions<AsgardeoOptions> options)
     {
-        private readonly NavigationManager _navigationManager;
-        private readonly IHttpContextAccessor _httpContextAccessor;
+        _httpContextAccessor = httpContextAccessor;
+        _options = options.Value;
+    }
 
-        public AsgardeoAuthService(NavigationManager navigationManager, IHttpContextAccessor httpContextAccessor)
+    public async Task SignInAsync()
+    {
+        var context = _httpContextAccessor.HttpContext;
+        if (context != null)
         {
-            _navigationManager = navigationManager;
-            _httpContextAccessor = httpContextAccessor;
+            await context.ChallengeAsync(OpenIdConnectDefaults.AuthenticationScheme, new AuthenticationProperties
+            {
+                RedirectUri = _options.RedirectUri
+            });
+        }
+    }
+
+    public async Task SignOutAsync()
+    {
+        var context = _httpContextAccessor.HttpContext;
+        if (context != null)
+        {
+            await context.SignOutAsync(OpenIdConnectDefaults.AuthenticationScheme, new AuthenticationProperties
+            {
+                RedirectUri = _options.PostLogoutRedirectUri
+            });
+            await context.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        }
+    }
+
+    public ClaimsPrincipal GetUser()
+    {
+        var context = _httpContextAccessor.HttpContext;
+        return context?.User;
+    }
+
+    public string GetAccessToken()
+    {
+        var context = _httpContextAccessor.HttpContext;
+        return context?.GetTokenAsync("access_token").Result;
+    }
+
+    public string GetIdToken()
+    {
+        var context = _httpContextAccessor.HttpContext;
+        return context?.GetTokenAsync("id_token").Result;
+    }
+
+    public string GetUserInfo()
+    {
+        var user = GetUser();
+        if (user == null || !user.Identity.IsAuthenticated)
+        {
+            return null;
         }
 
-        public async Task Login()
+        var userInfo = new
         {
-            _navigationManager.NavigateTo("account/login", forceLoad: true);
-        }
+            Name = user.FindFirst(ClaimTypes.Name)?.Value,
+            Email = user.FindFirst(ClaimTypes.Email)?.Value,
+            Id = user.FindFirst(ClaimTypes.NameIdentifier)?.Value
+        };
 
-        public async Task Logout()
-        {
-            _navigationManager.NavigateTo("account/logout", forceLoad: true);
-        }
-
-        public async Task<string> GetAccessToken()
-        {
-            return await _httpContextAccessor.HttpContext.GetTokenAsync("access_token");
-        }
-
-        public async Task<bool> IsAuthenticated()
-        {
-            return _httpContextAccessor.HttpContext.User.Identity.IsAuthenticated;
-        }
+        return System.Text.Json.JsonSerializer.Serialize(userInfo);
     }
 }
