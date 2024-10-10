@@ -50,10 +50,6 @@
             "Microsoft.AspNetCore.Authentication.OpenIdConnect": {
               "target": "Package",
               "version": "[8.0.8, )"
-            },
-            "Microsoft.Extensions.Options": {
-              "target": "Package",
-              "version": "[8.0.2, )"
             }
           },
           "imports": [

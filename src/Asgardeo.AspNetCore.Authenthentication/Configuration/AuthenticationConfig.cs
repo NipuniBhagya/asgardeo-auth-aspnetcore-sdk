@@ -8,17 +8,14 @@ using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Microsoft.IdentityModel.Protocols;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.Extensions.Options;
 
 namespace Asgardeo.AspNetCore.Authenthentication.Configuration
 {
-    public static class AsgardeoExtensions
+    public static class AuthenticationConfig
     {
-        public static IServiceCollection AddAsgardeoAuthentication(this IServiceCollection services, Action<AsgardeoOptions> configureOptions)
+        public static IServiceCollection AddCustomAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
-            services.Configure(configureOptions);
-            services.AddHttpContextAccessor();
-            services.AddTransient<AsgardeoAuthService>();
+            var asgardeoSettings = configuration.GetSection("Authentication:Asgardeo").Get<AsgardeoSettings>();
 
             services.AddAuthentication(options =>
             {
@@ -28,18 +25,15 @@ namespace Asgardeo.AspNetCore.Authenthentication.Configuration
             .AddCookie("Cookies")
             .AddOpenIdConnect(OpenIdConnectDefaults.AuthenticationScheme, options =>
             {
-                var serviceProvider = services.BuildServiceProvider();
-                var asgardeoOptions = serviceProvider.GetRequiredService<IOptions<AsgardeoOptions>>().Value;
-
                 // Use values from the configuration model
-                options.Authority = asgardeoOptions.Authority;
-                options.ClientId = asgardeoOptions.ClientId;
-                options.ClientSecret = asgardeoOptions.ClientSecret;
-                options.ResponseType = asgardeoOptions.ResponseType;
-                options.SaveTokens = true;
+                options.Authority = asgardeoSettings.Authority;
+                options.ClientId = asgardeoSettings.ClientId;
+                options.ClientSecret = asgardeoSettings.ClientSecret;
+                options.ResponseType = asgardeoSettings.ResponseType;
+                options.SaveTokens = asgardeoSettings.SaveTokens;
 
                 // Add scopes
-                foreach (var scope in asgardeoOptions.Scopes)
+                foreach (var scope in asgardeoSettings.Scopes)
                 {
                     options.Scope.Add(scope);
                 }
@@ -78,12 +72,6 @@ namespace Asgardeo.AspNetCore.Authenthentication.Configuration
                         context.ProtocolMessage.IssuerAddress = logoutUri;
                         context.ProtocolMessage.PostLogoutRedirectUri = postLogoutUri;
 
-                        return Task.CompletedTask;
-                    },
-                    OnAuthenticationFailed = context =>
-                    {
-                        context.Response.Redirect("/");
-                        context.HandleResponse();
                         return Task.CompletedTask;
                     }
                 };
