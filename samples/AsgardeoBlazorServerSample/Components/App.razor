@@ -1,15 +1,25 @@
-﻿@namespace AsgardeoBlazorServerSample
-
-@using Microsoft.AspNetCore.Components.Authorization
-@using AsgardeoBlazorServerSample.Components.Layout
-@using Microsoft.AspNetCore.Components.Routing
+﻿@using Microsoft.AspNetCore.Components.Authorization
 @inject NavigationManager Navigation
 
-<CascadingAuthenticationState>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    <link rel="stylesheet" href="AsgardeoBlazorServerSample.styles.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="../styles/app.css" rel="stylesheet" />
+    <HeadOutlet />
+</head>
+
+<body>
     <Router AppAssembly="@typeof(App).Assembly">
         <Found Context="routeData">
-            <RouteView RouteData="routeData" DefaultLayout="@typeof(MainLayout)" />
-            <FocusOnNavigate RouteData="routeData" Selector="h1" />
+            <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+            <FocusOnNavigate RouteData="@routeData" Selector="h1" />
         </Found>
         <NotFound>
             <PageTitle>Not found</PageTitle>
@@ -18,13 +28,16 @@
             </LayoutView>
         </NotFound>
     </Router>
-</CascadingAuthenticationState>
+    <script src="_framework/blazor.web.js"></script>
+</body>
+
+</html>
 
 @code {
     private AuthenticationState? authState;
 
     [Inject]
-    private AuthenticationStateProvider authenticationStateProvider { get; set; }
+    private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
 
     [Inject]
     private UserState UserState { get; set; }
@@ -32,7 +45,7 @@
     protected override async Task OnInitializedAsync()
     {
         // Fetch the authentication state (identity and claims)
-        authState = await authenticationStateProvider.GetAuthenticationStateAsync();
+        authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
 
         if (authState.User.Identity != null && authState.User.Identity.IsAuthenticated)
         {
@@ -48,8 +61,6 @@
                 FirstName = firstName,
                 LastName = lastName
             });
-        } else {
-            Navigation.NavigateTo("/login");
         }
     }
 }

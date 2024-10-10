@@ -1,12 +1,13 @@
 
-@using Asgardeo.AspNetCore.Authenthentication
-@inject AsgardeoAuthService AuthService
+@using Asgardeo.AspNetCore.Authenthentication.Services
+@inject IAuthService AuthService
+@rendermode InteractiveServer
 
 <button @onclick="SignOut" style="color: black; padding: 0.5rem 0.75rem; border-radius: 0.375rem; border: solid 1px #660000" class="btn-link">Logout</button>
 
 @code {
     private async Task SignOut()
     {
-        await AuthService.SignOutAsync();
+        await AuthService.Logout();
     }
 }
