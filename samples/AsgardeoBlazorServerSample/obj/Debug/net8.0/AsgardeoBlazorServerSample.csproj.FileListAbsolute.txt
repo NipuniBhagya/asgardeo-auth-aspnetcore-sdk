@@ -90,8 +90,6 @@
 /Users/wso2/Public/WSO2/Learning/ASP.Net/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/obj/Debug/net8.0/ref/AsgardeoBlazorServerSample.dll
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/bin/Debug/net8.0/appsettings.Development.json
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/bin/Debug/net8.0/appsettings.json
-/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/bin/Debug/net8.0/package-lock.json
-/Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/bin/Debug/net8.0/package.json
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/bin/Debug/net8.0/AsgardeoBlazorServerSample.staticwebassets.runtime.json
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/bin/Debug/net8.0/AsgardeoBlazorServerSample
 /Users/wso2/Public/WSO2/sources/sdks/asgardeo-auth-aspnetcore-sdk/samples/AsgardeoBlazorServerSample/bin/Debug/net8.0/AsgardeoBlazorServerSample.deps.json
